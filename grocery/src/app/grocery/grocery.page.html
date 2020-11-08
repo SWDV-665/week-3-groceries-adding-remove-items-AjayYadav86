@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title><h2>{{title}}</h2></ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-list>
+    <ion-item-sliding *ngFor="let item of Items; let i = index">
+      <ion-item>
+        <div><b>{{item.name}}</b>
+          <br/>{{item.quantity}}</div>
+      </ion-item> 
+      <ion-item-options>
+        <button (click)="removeItem(item,i)" ion-button color="secondary" icon-start>
+          <ion-icon name="trash"></ion-icon>
+          Done
+        </button>
+      </ion-item-options>   
+    </ion-item-sliding>
+  </ion-list>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="addItem()">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>
